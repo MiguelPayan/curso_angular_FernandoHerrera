@@ -1,0 +1,21 @@
+<div>
+  <h2>Listado de personajes</h2>
+  <ol>
+    <div class="list-item">
+      <li
+        *ngFor="
+          let character of newCharacter;
+          let i = index;
+          let first = first;
+          let last = last
+        "
+        [ngClass]="{ 'first-list-element': first, 'last-list-element': last }"
+      >
+        <div class="character-info">
+          {{ "Nombre: " + character.name + " - Edad: " + character.ki }}
+        </div>
+        <button class="delete-button" (click)="emitToDelete(i)">X</button>
+      </li>
+    </div>
+  </ol>
+</div>

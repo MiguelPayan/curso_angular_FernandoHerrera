@@ -1,0 +1,23 @@
+<hr />
+
+<h1>Informacion del heroe</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ heroName }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ heroAge }}</dd>
+
+  <td>Metodo:</td>
+  <dd>{{ getDescription() }}</dd>
+
+  <td>Nombre capitalizado:</td>
+  <dd>{{ capitalizedName }}</dd>
+
+  <button (click)="changeName()">Cambiar nombre</button>
+  <button (click)="changeAge()">Cambiar edad</button>
+  <button (click)="resetAll()" *ngIf="heroName !== 'Batman' || heroAge !== 32">
+    Devolver
+  </button>
+</dl>

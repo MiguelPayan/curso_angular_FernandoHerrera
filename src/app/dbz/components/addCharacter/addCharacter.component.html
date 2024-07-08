@@ -1,0 +1,17 @@
+<form>
+  <input
+    type="text"
+    name="name"
+    placeholder="Name of DBZ Character"
+    [(ngModel)]="newCharacter.name"
+  />
+  <input
+    type="number"
+    name="ki"
+    placeholder="Ki level"
+    [(ngModel)]="newCharacter.ki"
+  />
+</form>
+{{ newCharacter.name }}
+{{ newCharacter.ki }}
+<button type="submit" (click)="emitCharacter()">Agregar personaje</button>

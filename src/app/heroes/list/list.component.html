@@ -1,0 +1,29 @@
+<link
+  rel="stylesheet"
+  href="https://matcha.mizu.sh/styles/@syntax-highlighting/mod.css"
+/>
+
+<hr />
+<button (click)="dropLast()" *ngIf="personas.length !== 0">
+  Borrar ultima persona
+</button>
+
+<button (click)="reset()" *ngIf="deletedPerson != null">Reestablecer</button>
+
+<div *ngIf="deletedPerson == null; else deleted">
+  <h1>Lista de personas</h1>
+</div>
+
+<ng-template #deleted>
+  <h1 *ngIf="personas.length > 0; else noDeleted">
+    Ultimo eliminado {{ deletedPerson }}
+  </h1>
+</ng-template>
+
+<ng-template #noDeleted>
+  <h3>Nada para borrar</h3>
+</ng-template>
+
+<ul>
+  <li *ngFor="let persona of personas">{{ persona }}</li>
+</ul>
